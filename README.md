@@ -1,78 +1,55 @@
 # duf
 
-[![Latest Release](https://img.shields.io/github/release/muesli/duf.svg)](https://github.com/muesli/duf/releases)
-[![Build Status](https://github.com/muesli/duf/workflows/build/badge.svg)](https://github.com/muesli/duf/actions)
-[![Go ReportCard](http://goreportcard.com/badge/muesli/duf)](http://goreportcard.com/report/muesli/duf)
-[![GoDoc](https://godoc.org/github.com/golang/gddo?status.svg)](https://pkg.go.dev/github.com/muesli/duf)
+Disk Usage/Free Utility
 
-Disk Usage/Free Utility (Linux, BSD & macOS)
+## Overview
 
-![duf](/duf.png)
+- Repository: [alzkdpf/duf](https://github.com/alzkdpf/duf)
+- Visibility: Public
+- Last updated: 2020-09-28
+- Main stack: Go
 
-## Features
+## Project Structure
 
-- [x] User-friendly, colorful output
-- [x] Adjusts to your terminal's width
-- [x] Sort the results according to your needs
-- [x] Groups & filters devices
-- [x] Can conveniently output JSON
+```text
+.github/FUNDING.yml
+.github/workflows/build.yml
+.gitignore
+.goreleaser.yml
+LICENSE
+README.md
+duf.png
+filesystems.go
+filesystems_darwin.go
+filesystems_freebsd.go
+filesystems_linux.go
+filesystems_openbsd.go
+go.mod
+go.sum
+main.go
+mounts.go
+mounts_darwin.go
+mounts_freebsd.go
+mounts_linux.go
+mounts_openbsd.go
+table.go
+```
 
-## Installation
+## Getting Started
 
-### Packages
+Install dependencies or prepare the project:
 
-- Arch Linux: [duf](https://aur.archlinux.org/packages/duf/)
-- macOS: `brew install muesli/homebrew-tap/duf`
-- Nix: `nix-env -iA nixpkgs.duf`
-- [Packages](https://github.com/muesli/duf/releases) in Debian & RPM formats
+```bash
+go mod download
+```
 
-### Binaries
+Run the common development command:
 
-- [Binaries](https://github.com/muesli/duf/releases) for Linux, FreeBSD, macOS
+```bash
+go run .
+```
 
-### From source
+## Notes
 
-Make sure you have a working Go environment (Go 1.12 or higher is required).
-See the [install instructions](http://golang.org/doc/install.html).
-
-Compiling duf is easy, simply run:
-
-    git clone https://github.com/muesli/duf.git
-    cd duf
-    go build
-
-## Usage
-
-You can simply start duf without any command-line arguments:
-
-    duf
-
-If you want to list everything (including pseudo, duplicate, inaccessible file systems):
-
-    duf --all
-
-You can hide individual tables:
-
-    duf --hide-local --hide-network --hide-fuse --hide-special --hide-loops --hide-binds
-
-List inode information instead of block usage:
-
-    duf --inodes
-
-Sort the output:
-
-    duf --sort size
-
-Valid keys are: `mountpoint`, `size`, `used`, `avail`, `usage`, `inodes`,
-`inodes_used`, `inodes_avail`, `inodes_usage`, `type`, `filesystem`.
-
-Show or hide specific columns:
-
-    duf --output mountpoint,size,usage
-
-Valid keys are: `mountpoint`, `size`, `used`, `avail`, `usage`, `inodes`,
-`inodes_used`, `inodes_avail`, `inodes_usage`, `type`, `filesystem`.
-
-If you prefer your output as JSON:
-
-    duf --json
+- This README was generated from the repository metadata and file structure.
+- Update this document when setup steps, deployment targets, or project ownership changes.
